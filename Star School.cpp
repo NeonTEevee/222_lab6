@@ -14,7 +14,6 @@ int main ()
 		
 	for(i=1; i<=n; i++)
 	{
-		printf("Score[%d] = %d %d\n", i, score[i][1], score[i][2]);
 		player[score[i][1]]++;
 		player[score[i][2]]++;
 	}
