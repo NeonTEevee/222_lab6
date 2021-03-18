@@ -18,7 +18,7 @@ int main ()
 	
 	for(i=0; i<strlen(draw); i++)
 	{
-		if(draw[i] == 'D')
+		if(draw[i] == 'D' && y != size-1)
 		{
 			if(draw[i-1] == 'L'||draw[i-1] == 'R'){
 				paper[x][y] = 3;
@@ -27,7 +27,7 @@ int main ()
 			}
 			y++;
 		}
-		if(draw[i] == 'U')
+		if(draw[i] == 'U' && y != 0)
 		{
 			if(draw[i-1] == 'L'||draw[i-1] == 'R'){
 				paper[x][y] = 3;
@@ -36,7 +36,7 @@ int main ()
 			}
 			y--;
 		}
-		if(draw[i] == 'R')
+		if(draw[i] == 'R' && x != size-1)
 		{
 			if(draw[i-1] == 'D'||draw[i-1] == 'U'){
 				paper[x][y] = 3;
@@ -45,7 +45,7 @@ int main ()
 			}
 			x++;
 		}
-		if(draw[i] == 'L')
+		if(draw[i] == 'L' && x != 0)
 		{
 			if(draw[i-1] == 'D'||draw[i-1] == 'U'){
 				paper[x][y] = 3;
