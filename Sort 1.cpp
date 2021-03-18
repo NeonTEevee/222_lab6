@@ -12,20 +12,20 @@ int main ()
 		strcpy(copy[i], word[i]);
 		if(copy[i][0]>=97)
 			copy[i][0]-=32;
-		printf("Word = %s, Copy = %s", word[i], copy[i]);
 	}
 	
 	for(i=0; i<n; i++)
 	{
 		for(j=0; j<n; j++)
 		{
-			if(copy[i][0]>copy[j][0])
+			if(copy[i][0]<copy[j][0])
 			{
 				strcpy(tempt, word[i]);
 				strcpy(word[i], word[j]);
 				strcpy(word[j], tempt);
-				i = -1;
-				j = n;
+				strcpy(tempt, copy[i]);
+				strcpy(copy[i], copy[j]);
+				strcpy(copy[j], tempt);
 			}
 		}
 	}
