@@ -1,9 +1,9 @@
 #include <stdio.h>
 int main ()
 {
-	int n, i;
+	int n, i, j, max = 0, best, worst;
 	scanf("%d", &n);
-	int score[n][n], player[n];
+	int score[n][n], player[n], min = n;
 	for(i=1; i<=n; i++)
 	{
 		scanf("%d %d", &score[i][1], &score[i][2]);
@@ -11,18 +11,29 @@ int main ()
 	
 	for(i=1; i<=n; i++)
 		player[i] = 0;
-	
+		
 	for(i=1; i<=n; i++)
 	{
-		if(score[i][1] == i || score[i][2] == i)
-			player[i]++;
+		printf("Score[%d] = %d %d\n", i, score[i][1], score[i][2]);
+		player[score[i][1]]++;
+		player[score[i][2]]++;
 	}
 	
 	for(i=1; i<=n; i++)
 	{
-		printf("Player %d = %d\n", i, player[i]);
+		if(max < player[i])
+		{
+			max = player[i];
+			best = i;
+		}
+		if(min > player[i])
+		{
+			min = player[i];
+			worst = i;
+		}
 	}
 	
+	printf("%d %d", best, worst);
 	return 0;
 	
 }
