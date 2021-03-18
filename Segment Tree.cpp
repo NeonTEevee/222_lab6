@@ -9,6 +9,7 @@ int main ()
 	{
 		scanf(" %c", &command[x]);
 		scanf("%d %d", &value[x+1][0], &value[0][x+1]);
+		printf("Command #%d = %c\nValue[%d][0] = %d\nValue[0][%d] = %d\n", x+1, command[x], x+1, value[x+1][0], x+1, value[0][x+1]);
 	}
 	
 	for(x=0; x<=N; x++)
@@ -19,6 +20,7 @@ int main ()
 		if(command[x] == 'U')
 		{
 			i[value[x+1][0]] = value[0][x+1];
+			printf("i[%d] = %d\n", value[x+1][0], value[0][x+1]);
 		}
 		if(command[x] == 'P')
 		{
